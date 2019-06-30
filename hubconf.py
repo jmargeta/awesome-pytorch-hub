@@ -4,7 +4,7 @@ from efficientnet_pytorch import EfficientNet
 from gluoncv.model_zoo import mask_rcnn_fpn_resnet101_v1d_coco as mask_rcnn_fpn_resnet101_v1d_coco_mxnet
 from pretrainedmodels.models import pnasnet5large
 from torchvision.models import mobilenet_v2, shufflenet_v2_x1_0
-from mxnet.gluon.model_zoo.vision import mobilenet_v2_1_0 as mobilenet_v2_1_0_mxnet 
+from mxnet.gluon.model_zoo.vision import mobilenet_v2_1_0 as mobilenet_v2_1_0_mxnet
 
 # See also:
 # https://paperswithcode.com/sota/image-classification-on-imagenet
@@ -42,13 +42,13 @@ def object_recognition_faster(pretrained=False, **kwargs):
     return shufflenet_v2_x1_0(pretrained=pretrained, **kwargs)
 
 
-def object_recognition_faster_mxnet(pretrained=True, **kwargs):
+def object_recognition_faster_mxnet(pretrained=False, **kwargs):
     """Faster object recognition with mxnet mobilenet_v2_1_0 backend"""
 
-    return mxnet.gluon.model_zoo.vision.mobilenet_v2_1_0_mxnet(pretrained=pretrained, **kwargs)
+    return mobilenet_v2_1_0_mxnet(pretrained=pretrained, **kwargs)
 
 
-def instance_segmentation_mxnet(pretrained=True, **kwargs):
+def instance_segmentation_mxnet(pretrained=False, **kwargs):
     """Instance segmentation with mxnet mobilenet_v2_1_0 backend"""
 
     return mask_rcnn_fpn_resnet101_v1d_coco_mxnet(pretrained=pretrained, **kwargs)
