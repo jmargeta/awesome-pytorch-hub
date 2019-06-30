@@ -26,12 +26,12 @@ def object_recognition(pretrained=False, **kwargs):
 def object_recognition_sota(pretrained=False, **kwargs):
     """State of the art object recognition model"""
 
+    num_classes = 1000
     if pretrained is True:
         pretrained_dataset = 'imagenet'
-        num_classes=1000
         model = pnasnet5large(pretrained='imagenet', num_classes=num_classes, **kwargs)
     else:
-        model = pnasnet5large(**kwargs)
+        model = pnasnet5large(num_classes=num_classes, **kwargs)
     return model
 
 
