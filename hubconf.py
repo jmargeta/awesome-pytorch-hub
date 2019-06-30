@@ -1,4 +1,4 @@
-dependencies = ['torch', 'torchvision', 'pretrainedmodels', 'efficientnet-pytorch']
+dependencies = ['torch', 'torchvision', 'pretrainedmodels', 'efficientnet_pytorch']
 
 from torchvision.models import mobilenet_v2, shufflenet_v2_x1_0
 from pretrainedmodels.models import pnasnet5large
